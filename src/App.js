@@ -1,10 +1,15 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Footer from "./components/footer/Footer";
 import MainRoutes from "./routes/MainRoutes";
 
 const App = () => {
   return (
     <div>
-      <MainRoutes />
+      <BrowserRouter>
+        <MainRoutes />
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };
