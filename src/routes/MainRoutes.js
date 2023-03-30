@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AboutPages from "../pages/AboutPages/AboutPages";
+import AdminPage from "../pages/AdminPage/AdminPage";
 import HomePages from "../pages/HomePages/HomePages";
 import NoteFoundPage from "../pages/NotFoundPage/NoteFoundPage";
 import ShopPages from "../pages/ShopPages/ShopPages";
@@ -11,7 +12,9 @@ const MainRoutes = () => {
     { link: "/shop", element: <ShopPages />, id: 2 },
     { link: "/about", element: <AboutPages />, id: 3 },
     { link: "*", element: <NoteFoundPage />, id: 4 },
+    { link: "/admin", element: <AdminPage />, id: 5 },
   ];
+  //   const PRIVATE_ROTES = [{ link: "/admin", element: <AdminPage />, id: 5 }];
   return (
     <>
       <BrowserRouter>
@@ -20,6 +23,11 @@ const MainRoutes = () => {
             <Route path={item.link} element={item.element} key={item.id} />
           ))}
         </Routes>
+        {/* <Routes>
+          {PRIVATE_ROTES.map((item) => (
+            <Route path={item.link} element={item.element} key={item.id} />
+          ))}
+        </Routes> */}
       </BrowserRouter>
     </>
   );
