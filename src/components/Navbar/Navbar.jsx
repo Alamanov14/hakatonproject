@@ -26,14 +26,13 @@ export default function Navbar() {
             margin: ' 0 200px',
             color: 'black',
           }}>
-          <Box className="left" sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box className="NavbarLeft" sx={{ display: 'flex', alignItems: 'center' }}>
             <Typography component="a" href="/" marginBottom="-10px" marginRight="200px">
               <img src="https://i.ibb.co/DYY9Lks/image.png" alt="image" border="0" />
             </Typography>
             <Typography id="Navbar_Navigation" sx={{ display: 'flex', alignItems: 'center' }}>
               <Button
                 variant="h6"
-                noWrap
                 component="a"
                 href="/"
                 sx={{
@@ -74,16 +73,17 @@ export default function Navbar() {
             </Typography>
           </Box>
 
-          <Box className="Right" sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box className="NavbarRight" sx={{ display: 'flex', alignItems: 'center' }}>
             <Box
               component="a"
               href="tel:+720(495)20823-54-12"
-              sx={{ display: 'flex', alignItems: 'center', marginRight: '200px' }}>
+              sx={{ display: 'flex', alignItems: 'center', marginRight: '50px' }}>
               <CallIcon />
               <p> +7 (495) 823-54-12</p>
             </Box>
-            <LocalMallIcon onClick={() => navigate('/contact')} />
-            <Favorite />
+            <input placeholder="Search"></input>
+            <LocalMallIcon onClick={() => navigate('/offer')} />
+            <Favorite onClick={() => navigate('/favorite')} />
             <Button sx={{ textTransform: 'none', color: 'black' }}>Login</Button>
           </Box>
         </Toolbar>

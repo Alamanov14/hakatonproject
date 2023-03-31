@@ -12,6 +12,7 @@ import PrivacyPages from '../pages/PrivacyPages/PrivacyPages';
 import ShopPages from '../pages/ShopPages/ShopPages';
 import Sweatshirt from '../pages/SweatshirtPages/SweatshirtPages';
 import CoatPages from '../pages/CoatPages/CoatPages';
+import FavoritePages from '../pages/FavoritePages/FavoritePages';
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -27,6 +28,7 @@ const MainRoutes = () => {
     { link: '/hoodies', element: <HoodiesPages />, id: 10 },
     { link: '/contact', element: <ContactPages />, id: 11 },
     { link: '/feedback', element: <FeedbackPages />, id: 12 },
+    { link: '/favorite', element: <FavoritePages />, id: 13 },
   ];
   return (
     <>
