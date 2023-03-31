@@ -1,6 +1,6 @@
-import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import "../footer/Footer.css";
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import '../footer/Footer.css';
 const Footer = () => {
   // const location = useLocation();
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Footer = () => {
             <img
               className="left_img"
               src="http://womazing.s-host.net/wp-content/uploads/2021/02/logo.svg"
-              alt=""
+              alt="Error"
             />
           </div>
           <div>
