@@ -22,23 +22,32 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductContextProvaider = ({ children }) => {
   const [state, diapatch] = useReducer(reducer, INIT_STATE);
+
   console.log(state);
 
-  // ! read(get request)
+  // todo  read(get request)
   const getProducts = async () => {
     const { data } = await axios.get(`${API}${window.location.search}`);
     diapatch({ type: "GET_PRODUCTS", payload: data });
   };
-  // ! create (post request)
+  // todo create (post request)
+  // todo Delete
+  const deleteProduct = async (id) => {
+    await axios.delete(`${API}/${id}`);
+    getProducts();
+  };
 
   const addProduct = async (newProduct) => {
     await axios.post(API, newProduct);
     getProducts();
   };
   const values = {
+    products: state.products,
     getProducts,
     addProduct,
+    deleteProduct,
   };
+  console.log(values.products);
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
   );
