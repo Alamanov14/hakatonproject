@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import MainRoutes from './routes/MainRoutes';
 
+
 const App = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const App = () => {
         <MainRoutes />
         <Footer />
       </BrowserRouter>
+
     </div>
   );
 };

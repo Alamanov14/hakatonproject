@@ -13,6 +13,8 @@ import ShopPages from '../pages/ShopPages/ShopPages';
 import Sweatshirt from '../pages/SweatshirtPages/SweatshirtPages';
 import CoatPages from '../pages/CoatPages/CoatPages';
 import FavoritePages from '../pages/FavoritePages/FavoritePages';
+import AdminPage from "../pages/AdminPage/AdminPage";
+
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -29,7 +31,12 @@ const MainRoutes = () => {
     { link: '/contact', element: <ContactPages />, id: 11 },
     { link: '/feedback', element: <FeedbackPages />, id: 12 },
     { link: '/favorite', element: <FavoritePages />, id: 13 },
+      { link: "/admin", element: <AdminPage />, id: 14 },
+
+
+
   ];
+  //   const PRIVATE_ROTES = [{ link: "/admin", element: <AdminPage />, id: 5 }];
   return (
     <>
       <Routes>
@@ -37,6 +44,11 @@ const MainRoutes = () => {
           <Route path={item.link} element={item.element} key={item.id} />
         ))}
       </Routes>
+      {/* <Routes>
+          {PRIVATE_ROTES.map((item) => (
+            <Route path={item.link} element={item.element} key={item.id} />
+          ))}
+        </Routes> */}
     </>
   );
 };
