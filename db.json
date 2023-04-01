@@ -1,20 +1,20 @@
 {
   "products": [
     {
-      "name": "nurs",
-      "description": "asdasd",
-      "price": 0,
-      "picture": "dasd",
-      "category": "sdffsd",
-      "id": 1
+      "name": "dasd",
+      "description": "asd",
+      "price": null,
+      "picture": "asdas",
+      "category": "asda",
+      "id": 6
     },
     {
-      "name": "odejda1",
-      "description": "sksvfmlksdmflksd",
-      "price": 123456,
-      "picture": "fds",
-      "category": "jenskaya",
-      "id": 2
+      "name": "sdf",
+      "description": "wer",
+      "price": null,
+      "picture": "ewr",
+      "category": "erw",
+      "id": 7
     }
   ]
 }
