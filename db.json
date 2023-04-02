@@ -1,9 +1,9 @@
 {
   "products": [
     {
-      "name": "dasd",
+      "name": "nursultan",
       "description": "asd",
-      "price": null,
+      "price": 789,
       "picture": "asdas",
       "category": "asda",
       "id": 6
