@@ -8,6 +8,8 @@ import TableRow from "@mui/material/TableRow"; // импортируем ком�
 import Paper from "@mui/material/Paper"; // импортируем компонент Paper из библиотеки Material-UI
 import { useCart } from "../../context/CartContextProvider"; // импортируем хук useCart из нашего CartContextProvider
 import { Button } from "@mui/material"; // импортируем компонент Button из библиотеки Material-UI
+import CloseIcon from "@mui/icons-material/Close";
+import { maxWidth } from "@mui/system";
 
 // функция, которая возвращает объект с полями name, calories, fat, carbs, protein
 function createData(name, calories, fat, carbs, protein) {
@@ -41,17 +43,17 @@ export default function Cart() {
   // возвращаем компонент TableContainer с дочерним компонентом Table, который содержит заголовок таблицы и тело таблицы
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table
+        sx={{ minWidth: 650, maxWidth: 1100, margin: "auto" }}
+        aria-label="simple table"
+      >
         <TableHead>
           <TableRow>
-            <TableCell>Picture</TableCell>
-            <TableCell align="right">Name</TableCell>
-            <TableCell align="right">Type</TableCell>
-            <TableCell align="right">Description</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Count</TableCell>
-            <TableCell align="right">SubPrice</TableCell>
-            <TableCell align="right">-</TableCell>
+            <TableCell></TableCell>
+            <TableCell align="left">Товар</TableCell>
+            <TableCell align="center">Цена</TableCell>
+            <TableCell align="center">Количество</TableCell>
+            <TableCell align="center">Всего</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -60,17 +62,16 @@ export default function Cart() {
               key={row.item.id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
+              <TableCell align="left">
+                <Button onClick={() => deleteCartProduct(row.item.id)}>
+                  <CloseIcon />
+                </Button>
+              </TableCell>
+              <TableCell component="th" scope="row" align="left">
                 <img src={row.item.picture} width="100" height="100" alt="" />
               </TableCell>
-              <TableCell align="right">{row.item.name}</TableCell>
-              <TableCell align="right">{row.item.type}</TableCell>
-              <TableCell align="right">{row.item.description}</TableCell>
-              <TableCell align="right">{row.item.price}</TableCell>
-              <TableCell align="right">
-                {
-                  / Используем элемент input для изменения количества товара в корзине /
-                }
+              <TableCell align="center">{row.item.price}</TableCell>
+              <TableCell align="center">
                 <input
                   type="number"
                   min={1}
@@ -81,13 +82,7 @@ export default function Cart() {
                   value={row.count}
                 />
               </TableCell>
-              <TableCell align="right">{row.subPrice}</TableCell>
-              <TableCell align="right">
-                {/ Кнопка для удаления товара из корзины /}
-                <Button onClick={() => deleteCartProduct(row.item.id)}>
-                  DELETE
-                </Button>
-              </TableCell>
+              <TableCell align="center">{row.subPrice}</TableCell>
             </TableRow>
           ))}
         </TableBody>
