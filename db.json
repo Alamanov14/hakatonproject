@@ -1,19 +1,28 @@
 {
-  "posts": [
+  "products": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "nursultan",
+      "description": "asd",
+      "price": 789,
+      "picture": "asdas",
+      "category": "asda",
+      "id": 6
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "sdf",
+      "description": "wer",
+      "price": null,
+      "picture": "ewr",
+      "category": "erw",
+      "id": 7
+    },
+    {
+      "name": "летняя одежда",
+      "description": "втаыдтыдвл",
+      "price": 456,
+      "picture": "https://www.kp40.ru/pictures/releases/68757/picture-845h.jpg",
+      "category": "легкая",
+      "id": 8
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
