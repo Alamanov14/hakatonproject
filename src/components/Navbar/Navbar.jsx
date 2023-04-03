@@ -38,7 +38,7 @@ export default function Navbar() {
               marginRight="200px"
             >
               <img
-                src="https://i.ibb.co/DYY9Lks/image.png"
+                src="http://womazing.s-host.net/wp-content/uploads/2021/02/logo.svg"
                 alt="image"
                 border="0"
               />
@@ -110,7 +110,7 @@ export default function Navbar() {
               <p> +7 (495) 823-54-12</p>
             </Box>
             <input placeholder="Search"></input>
-            <LocalMallIcon onClick={() => navigate("/offer")} />
+            <LocalMallIcon onClick={() => navigate("/cart")} />
             <Favorite onClick={() => navigate("/favorite")} />
             <Button sx={{ textTransform: "none", color: "black" }}>
               Login
