@@ -40,12 +40,32 @@ const ContactPages = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div className="contact_input">
         <h3 className="contact_h3">Напишите нам</h3>
-        <TextField id="standard-basic" label="Имя" variant="standard" />
-        <TextField id="standard-basic" label="E-mail" variant="standard" />
-        <TextField id="standard-basic" label="Телефон" variant="standard" />
-        <TextField id="standard-basic" label="Сообщение" variant="standard" />
+        <TextField
+          className="contact_inp "
+          id="standard-basic"
+          label="Имя"
+          variant="standard"
+        />
+        <TextField
+          className="contact_inp"
+          id="standard-basic"
+          label="E-mail"
+          variant="standard"
+        />
+        <TextField
+          className="contact_inp"
+          id="standard-basic"
+          label="Телефон"
+          variant="standard"
+        />
+        <TextField
+          className="contact_inp"
+          id="standard-basic"
+          label="Сообщение"
+          variant="standard"
+        />
       </div>
       <button className="contact_button">Oтправить</button>
     </div>
