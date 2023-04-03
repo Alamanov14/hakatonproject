@@ -1,8 +1,28 @@
 import { TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../ContactPages/ContactPages.css";
 
 const ContactPages = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
+
+  const handleValues = () => {
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      alert("заполните поля");
+      return;
+    }
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+  };
+
   return (
     <div className="Contact">
       <div className="Contact_div_con">
@@ -27,7 +47,9 @@ const ContactPages = () => {
       <div className="contact_div_center">
         <div className="contact_left">
           <p className="contact_left_p">Телефон</p>
-          <p className="contact_left_h5">+7 (495) 823-54-12</p>
+          <p onClick={() => navigate(`/feedback`)} className="contact_left_h5">
+            +7 (495) 823-54-12
+          </p>
         </div>
         <div className="contact_center">
           <p className="contact_center_p">E-mail</p>
@@ -43,31 +65,41 @@ const ContactPages = () => {
       <div className="contact_input">
         <h3 className="contact_h3">Напишите нам</h3>
         <TextField
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="contact_inp "
           id="standard-basic"
           label="Имя"
           variant="standard"
         />
         <TextField
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           className="contact_inp"
           id="standard-basic"
           label="E-mail"
           variant="standard"
         />
         <TextField
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           className="contact_inp"
           id="standard-basic"
           label="Телефон"
           variant="standard"
         />
         <TextField
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           className="contact_inp"
           id="standard-basic"
           label="Сообщение"
           variant="standard"
         />
       </div>
-      <button className="contact_button">Oтправить</button>
+      <button onClick={handleValues} className="contact_button">
+        Oтправить
+      </button>
     </div>
   );
 };
