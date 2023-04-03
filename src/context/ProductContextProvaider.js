@@ -44,7 +44,7 @@ const ProductContextProvaider = ({ children }) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
   };
-  //! get product details
+  //todo get product details
   const getProductDetails = async (id) => {
     const { data } = await axios.get(`${API}/${id}`);
     dispatch({ type: "GET_PRODUCT_DETAILS", payload: data });

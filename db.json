@@ -15,6 +15,14 @@
       "picture": "ewr",
       "category": "erw",
       "id": 7
+    },
+    {
+      "name": "летняя одежда",
+      "description": "втаыдтыдвл",
+      "price": 456,
+      "picture": "https://www.kp40.ru/pictures/releases/68757/picture-845h.jpg",
+      "category": "легкая",
+      "id": 8
     }
   ]
 }
