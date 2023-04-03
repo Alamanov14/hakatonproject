@@ -1,0 +1,129 @@
+.Contact {
+  width: 80%;
+  margin: auto;
+}
+.Contact_div_con {
+  margin-bottom: 100px;
+}
+.contact_cart {
+  margin-bottom: 80px;
+}
+.contact_div_center {
+  display: flex;
+  justify-content: start;
+}
+.contact_h2 {
+  margin-top: 100px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 110%;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+  margin-bottom: 0;
+}
+.contact_div_top {
+  display: flex;
+  align-items: start;
+}
+.contact_p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.contact_pp {
+  margin-left: 7px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+
+  letter-spacing: 0.02em;
+
+  color: #919191;
+}
+
+.contact_left {
+  margin: 0 100px 30px 0;
+}
+
+.contact_center {
+  margin: 0 100px 30px 0;
+}
+
+.contact_right {
+  margin: 0 100px 30px 0;
+}
+
+.contact_left_p.contact_center_p.contact_right_p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+.contact_center_h5,
+.contact_left_h5,
+.contact_right_h5 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+}
+
+.contact_center_h5:hover,
+.contact_left_h5:hover {
+  color: #6e9c9f;
+  border-bottom: 0.5px solid #6e9c9f;
+  transition: 0.4s;
+  opacity: 0.7;
+}
+.contact_input {
+  width: 60%;
+
+  height: auto;
+}
+.contact_inp {
+  width: 80%;
+  margin-bottom: 20px;
+}
+.contact_button {
+  width: 140px;
+  height: 50px;
+  margin-top: 30px;
+  position: absolute;
+  left: 39%;
+  background-color: #6e9c9f;
+  color: aliceblue;
+  border: none;
+}
+.contact_button:hover {
+  background-color: #598083;
+  transition: 0.8s;
+}
+
+.contact_h3 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 33px;
+  line-height: 110%;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+  margin-bottom: 0;
+}

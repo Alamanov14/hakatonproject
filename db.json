@@ -23,6 +23,24 @@
       "picture": "https://www.kp40.ru/pictures/releases/68757/picture-845h.jpg",
       "category": "легкая",
       "id": 8
+    },
+    {
+      "title": "sfsd",
+      "price": "sdf",
+      "image": "sdf",
+      "id": 9
+    },
+    {
+      "title": "",
+      "price": "",
+      "image": "",
+      "id": 10
+    },
+    {
+      "title": "",
+      "price": "",
+      "image": "",
+      "id": 11
     }
   ]
 }

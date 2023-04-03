@@ -94,3 +94,13 @@
   margin-bottom: 30px;
   width: 200px;
 }
+.contact_left_h5.contact_center_h5 .contact_right_h5 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+}
