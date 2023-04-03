@@ -8,10 +8,14 @@ import Typography from "@mui/material/Typography";
 import { useProduct } from "../../../context/ProductContextProvaider";
 import EditProduct from "../EditProduct/EditProduct";
 import { useNavigate } from "react-router";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import { IconButton } from "@mui/material";
+import { useCart } from "../../../context/CartContextProvider";
 
 export default function CardProduct({ item }) {
   const { deleteProduct } = useProduct();
   const navigate = useNavigate();
+  const { addProductToCart, checkProductInCart } = useCart();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -41,6 +45,9 @@ export default function CardProduct({ item }) {
           Edit
         </Button>
         <Button size="small">details</Button>
+        <IconButton onClick={() => addProductToCart(item)}>
+          <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
+        </IconButton>
       </CardActions>
     </Card>
   );

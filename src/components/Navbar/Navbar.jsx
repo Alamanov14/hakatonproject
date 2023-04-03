@@ -13,9 +13,19 @@ import CallIcon from "@mui/icons-material/Call";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { display, style } from "@mui/system";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Badge } from "@mui/material";
+import { useCart } from "../../context/CartContextProvider";
+import { getCountProductsInCart } from "../../helpers/functions";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const [count, setCount] = React.useState(0);
+  const { addProductToCart } = useCart();
+
+  React.useEffect(() => {
+    setCount(getCountProductsInCart());
+  }, [addProductToCart]);
+
   return (
     <Box sx={{ flexGrow: 2 }}>
       <AppBar className="NavbarMain" position="static" id="app_bar">
@@ -38,7 +48,7 @@ export default function Navbar() {
               marginRight="200px"
             >
               <img
-                src="https://i.ibb.co/DYY9Lks/image.png"
+                src="http://womazing.s-host.net/wp-content/uploads/2021/02/logo.svg"
                 alt="image"
                 border="0"
               />
@@ -110,7 +120,10 @@ export default function Navbar() {
               <p> +7 (495) 823-54-12</p>
             </Box>
             <input placeholder="Search"></input>
-            <LocalMallIcon onClick={() => navigate("/offer")} />
+            <Badge badgeContent={count} color="primary">
+              <LocalMallIcon onClick={() => navigate("/cart")} />
+            </Badge>
+
             <Favorite onClick={() => navigate("/favorite")} />
             <Button sx={{ textTransform: "none", color: "black" }}>
               Login
