@@ -15,7 +15,7 @@ import CoatPages from "../pages/CoatPages/CoatPages";
 import FavoritePages from "../pages/FavoritePages/FavoritePages";
 import AdminPage from "../pages/AdminPage/AdminPage";
 import EditProductPage from "../pages/EditProductPage/EditProductPage";
-
+import Cart from "../components/Cart/Cart";
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     { link: "/", element: <HomePages />, id: 1 },
@@ -33,6 +33,7 @@ const MainRoutes = () => {
     { link: "/favorite", element: <FavoritePages />, id: 13 },
     { link: "/admin", element: <AdminPage />, id: 14 },
     { link: "/editPage/:id", element: <EditProductPage />, id: 15 },
+    { link: "/cart", element: <Cart />, id: 16 },
   ];
   //   const PRIVATE_ROTES = [{ link: "/admin", element: <AdminPage />, id: 5 }];
   return (

@@ -1,22 +1,6 @@
 {
   "products": [
     {
-      "name": "nursultan",
-      "description": "asd",
-      "price": 789,
-      "picture": "asdas",
-      "category": "asda",
-      "id": 6
-    },
-    {
-      "name": "sdf",
-      "description": "wer",
-      "price": null,
-      "picture": "ewr",
-      "category": "erw",
-      "id": 7
-    },
-    {
       "name": "летняя одежда",
       "description": "втаыдтыдвл",
       "price": 456,
@@ -29,18 +13,6 @@
       "price": "sdf",
       "image": "sdf",
       "id": 9
-    },
-    {
-      "title": "",
-      "price": "",
-      "image": "",
-      "id": 10
-    },
-    {
-      "title": "",
-      "price": "",
-      "image": "",
-      "id": 11
     }
   ]
 }
