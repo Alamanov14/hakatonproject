@@ -1,12 +1,5 @@
 import axios from "axios";
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
-import { useSearchParams } from "react-router-dom";
+import React, { createContext, useContext, useReducer, useState } from "react";
 import { API } from "../helpers/consts";
 
 export const productContext = createContext();
@@ -63,6 +56,7 @@ const ProductContextProvaider = ({ children }) => {
     getProducts();
   };
   // todo live search
+  const [modalActive, setModalActive] = useState(false);
 
   const values = {
     products: state.products,
@@ -72,7 +66,8 @@ const ProductContextProvaider = ({ children }) => {
     saveEditedProduct,
     getProductDetails,
     productDetails: state.productDetails,
-    // handleChange,
+    modalActive,
+    setModalActive,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
