@@ -38,7 +38,6 @@ const ProductList = () => {
           <CardProduct item={item} key={item.id} />
         ))}
       </Box>
-      {/* <Pagination /> */}
       <Stack spacing={2}>
         <Typography>Page: {page}</Typography>
         <Pagination count={10} page={page} onChange={handleChange} />

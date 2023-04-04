@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import Footer from "./components/footer/Footer";
+import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import CartContextProvider from "./context/CartContextProvider";
 import ProductContextProvider from "./context/ProductContextProvaider";

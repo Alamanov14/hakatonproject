@@ -1,4 +1,5 @@
-import * as React from "react";
+// import * as React from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,18 +8,28 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { Favorite } from "@mui/icons-material";
 import CallIcon from "@mui/icons-material/Call";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { display, style } from "@mui/system";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useProduct } from "../../context/ProductContextProvaider";
 import { Badge } from "@mui/material";
 import { useCart } from "../../context/CartContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
 
 export default function Navbar() {
   const navigate = useNavigate();
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
+  const { getProducts } = useProduct();
+  useEffect(() => {
+    setSearchParams({ q: search });
+    getProducts();
+  }, [search]);
+  console.log(window);
   const [count, setCount] = React.useState(0);
   const { addProductToCart } = useCart();
 
@@ -119,7 +130,10 @@ export default function Navbar() {
               <CallIcon />
               <p> +7 (495) 823-54-12</p>
             </Box>
-            <input placeholder="Search"></input>
+            <input
+              placeholder="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
             <Badge badgeContent={count} color="primary">
               <LocalMallIcon onClick={() => navigate("/cart")} />
             </Badge>

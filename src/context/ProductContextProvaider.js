@@ -1,5 +1,12 @@
 import axios from "axios";
-import React, { createContext, useContext, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
+import { useSearchParams } from "react-router-dom";
 import { API } from "../helpers/consts";
 
 export const productContext = createContext();
@@ -55,6 +62,7 @@ const ProductContextProvaider = ({ children }) => {
     await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
     getProducts();
   };
+  // todo live search
 
   const values = {
     products: state.products,
@@ -64,8 +72,8 @@ const ProductContextProvaider = ({ children }) => {
     saveEditedProduct,
     getProductDetails,
     productDetails: state.productDetails,
+    // handleChange,
   };
-  console.log(values.products);
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
   );
