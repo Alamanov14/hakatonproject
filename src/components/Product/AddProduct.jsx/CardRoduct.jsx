@@ -6,7 +6,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProduct } from "../../../context/ProductContextProvaider";
-import EditProduct from "../EditProduct/EditProduct";
 import { useNavigate } from "react-router";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import { IconButton } from "@mui/material";
@@ -15,7 +14,8 @@ import { Favorite } from "@mui/icons-material";
 import { useFavorite } from "../../../context/FavoriteContextProvider";
 
 export default function CardProduct({ item }) {
-  const { deleteProduct } = useProduct();
+  const { deleteProduct, getProducts } = useProduct();
+
   const navigate = useNavigate();
   const { addProductToCart, checkProductInCart } = useCart();
   const { addProductToFavorite, checkProductInFavorite } = useFavorite();
