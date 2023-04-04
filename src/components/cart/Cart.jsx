@@ -40,7 +40,6 @@ export default function Cart() {
     getCart(); // вызываем функцию getCart для обновления состояния корзины
   };
 
-  // возвращаем компонент TableContainer с дочерним компонентом Table, который содержит заголовок таблицы и тело таблицы
   return (
     <TableContainer component={Paper}>
       <Table
