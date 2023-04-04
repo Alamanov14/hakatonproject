@@ -18,18 +18,12 @@ import { useProduct } from "../../context/ProductContextProvaider";
 import { Badge } from "@mui/material";
 import { useCart } from "../../context/CartContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
+import Search from "../Search/Search";
 
 export default function Navbar() {
   const navigate = useNavigate();
 
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
-  const { getProducts } = useProduct();
-  useEffect(() => {
-    setSearchParams({ q: search });
-    getProducts();
-  }, [search]);
-  console.log(window);
+  const { modalActive, setModalActive, getProducts } = useProduct();
   const [count, setCount] = React.useState(0);
   const { addProductToCart } = useCart();
 
@@ -37,6 +31,12 @@ export default function Navbar() {
     setCount(getCountProductsInCart());
   }, [addProductToCart]);
 
+  function shopViewer() {
+    navigate("/shop");
+    setModalActive(true);
+    console.log(modalActive);
+    getProducts();
+  }
   return (
     <Box sx={{ flexGrow: 2 }}>
       <AppBar className="NavbarMain" position="static" id="app_bar">
@@ -82,7 +82,7 @@ export default function Navbar() {
                 className="NavbarButton"
                 variant="h6"
                 component="a"
-                onClick={() => navigate("/shop")}
+                onClick={() => shopViewer()}
                 sx={{
                   textTransform: "none",
                 }}
@@ -130,14 +130,15 @@ export default function Navbar() {
               <CallIcon />
               <p> +7 (495) 823-54-12</p>
             </Box>
-            <input
-              placeholder="Search"
-              onChange={(e) => setSearch(e.target.value)}
-            />
+
             <Badge badgeContent={count} color="primary">
               <LocalMallIcon onClick={() => navigate("/cart")} />
             </Badge>
 
+            {window.location.pathname === "/shop" ? (
+              <Search setActive={setModalActive} />
+            ) : null}
+            {console.log(modalActive)}
             <Favorite onClick={() => navigate("/favorite")} />
             <Button sx={{ textTransform: "none", color: "black" }}>
               Login
