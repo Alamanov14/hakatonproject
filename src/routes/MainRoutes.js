@@ -15,7 +15,7 @@ import CoatPages from "../pages/CoatPages/CoatPages";
 import FavoritePages from "../pages/FavoritePages/FavoritePages";
 import AdminPage from "../pages/AdminPage/AdminPage";
 import EditProductPage from "../pages/EditProductPage/EditProductPage";
-import Cart from "../components/Cart/Cart";
+import Cart from "../components/cart/Cart";
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     { link: "/", element: <HomePages />, id: 1 },
