@@ -1,18 +1,14 @@
 {
   "products": [
     {
-      "name": "летняя одежда",
-      "description": "втаыдтыдвл",
-      "price": 456,
-      "picture": "https://www.kp40.ru/pictures/releases/68757/picture-845h.jpg",
-      "category": "легкая",
-      "id": 8
-    },
-    {
       "title": "sfsd",
       "price": "sdf",
       "image": "sdf",
-      "id": 9
+      "id": 9,
+      "name": "asdasd",
+      "picture": "asd",
+      "category": "asd",
+      "description": "asd"
     },
     {
       "title": "",
