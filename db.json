@@ -1,21 +1,11 @@
 {
   "products": [
     {
-      "title": "sfsd",
-      "price": "sdf",
-      "image": "sdf",
-      "id": 9,
-      "name": "asdasd",
-      "picture": "asd",
-      "category": "asd",
-      "description": "asd"
-    },
-    {
       "title": "",
+      "price": 456,
       "image": "",
       "name": "летняя одежда",
       "description": "втаыдтыдвл",
-      "price": 456,
       "picture": "https://www.kp40.ru/pictures/releases/68757/picture-845h.jpg",
       "category": "легкая",
       "id": 8
@@ -75,6 +65,14 @@
       "picture": "https://www.bolshevichka.ru/assets/cache/images/foto/palto/0002%282%29-300x400-bc7.jpg",
       "category": "пальто",
       "id": 16
+    },
+    {
+      "name": "",
+      "description": "йцуке",
+      "price": 800,
+      "picture": "https://basket-02.wb.ru/vol277/part27770/27770689/images/big/1.jpg",
+      "category": "кардиган",
+      "id": 17
     }
   ]
 }
