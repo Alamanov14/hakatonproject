@@ -18,7 +18,7 @@ const ProductList = () => {
     setPage(value);
   };
 
-  const itemsPerPage = 5;
+  const itemsPerPage = 9;
   const count = Math.ceil(products.length / itemsPerPage);
 
   const currentData = () => {
@@ -30,13 +30,12 @@ const ProductList = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className="product__list">
       <div>
-        <h2>Магазин</h2>
+        <h2 id="zagalovok">Магазин</h2>
       </div>
-      <div className="filter_style">
-        <Filter currentData={currentData} />
-      </div>
+
+      <Filter currentData={currentData} />
 
       <Box id="list_card">
         <Stack spacing={2}>

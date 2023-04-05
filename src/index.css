@@ -15,6 +15,7 @@ code {
 html,
 body {
   height: 100%;
+  font-family: "Raleway", sans-serif;
 }
 .Footer {
   margin-top: 25%;

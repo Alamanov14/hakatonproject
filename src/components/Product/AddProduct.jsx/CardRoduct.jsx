@@ -13,7 +13,6 @@ import { useCart } from "../../../context/CartContextProvider";
 import { Favorite } from "@mui/icons-material";
 import { useFavorite } from "../../../context/FavoriteContextProvider";
 import "../AddProduct.jsx/CardProduct.css";
-
 export default function CardProduct({ item }) {
   const { deleteProduct, getProducts } = useProduct();
 
@@ -21,8 +20,8 @@ export default function CardProduct({ item }) {
   const { addProductToCart, checkProductInCart } = useCart();
   const { addProductToFavorite, checkProductInFavorite } = useFavorite();
   return (
-    <div className="product_card">
-      <Card sx={{ maxWidth: 398 }}>
+    <div className="card__element">
+      <Card sx={{ maxWidth: 300 }}>
         <CardMedia
           sx={{ height: 598 }}
           image={item.picture}
@@ -42,14 +41,14 @@ export default function CardProduct({ item }) {
             {item.type}
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions className="card__button">
           <Button size="small" onClick={() => deleteProduct(item.id)}>
             delete
           </Button>
           <Button size="small" onClick={() => navigate(`/editPage/${item.id}`)}>
             Edit
           </Button>
-          <Button size="small">details</Button>
+          {/* <Button size="small">details</Button> */}
           <IconButton onClick={() => addProductToCart(item)}>
             <LocalMallIcon
               color={checkProductInCart(item.id) ? "primary" : ""}

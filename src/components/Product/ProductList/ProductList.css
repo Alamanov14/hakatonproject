@@ -4,3 +4,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+#list_card {
+  margin-top: 10%;
+  margin-left: 45%;
+}
+#zagalovok {
+  text-align: center;
+}
