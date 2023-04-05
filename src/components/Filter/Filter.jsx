@@ -4,7 +4,7 @@ import CardProduct from "../Product/AddProduct.jsx/CardRoduct";
 
 const Filter = ({ currentData }) => {
   //   const { products } = useProduct;
-  const [selectedCategory, setSelectedCategory] = useState("все");
+  const [selectedCategory, setSelectedCategory] = useState("всe");
 
   const categories = [
     "все",

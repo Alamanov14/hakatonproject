@@ -1,12 +1,11 @@
 import { Box } from "@mui/material";
 import React, { useEffect } from "react";
 import { useProduct } from "../../../context/ProductContextProvaider";
-import CardProduct from "../AddProduct.jsx/CardRoduct";
 import Typography from "@mui/material/Typography";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Filter from "../../Filter/Filter";
-
+import "../ProductList/ProductList.css";
 const ProductList = () => {
   const { getProducts, products } = useProduct();
 
@@ -32,18 +31,19 @@ const ProductList = () => {
 
   return (
     <div>
-      <Filter currentData={currentData} />
-      {/* products={products} */}
-      {/* <CardProduct /> */}
+      <div>
+        <h2>Магазин</h2>
+      </div>
+      <div className="filter_style">
+        <Filter currentData={currentData} />
+      </div>
+
       <Box id="list_card">
-        {/* {currentData().map((item) => (
-          <CardProduct item={item} key={item.id} />
-        ))} */}
+        <Stack spacing={2}>
+          <Typography>Page: {page}</Typography>
+          <Pagination count={count} page={page} onChange={handleChange} />
+        </Stack>
       </Box>
-      <Stack spacing={2}>
-        <Typography>Page: {page}</Typography>
-        <Pagination count={count} page={page} onChange={handleChange} />
-      </Stack>
     </div>
   );
 };
