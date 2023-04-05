@@ -6,12 +6,19 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useProduct } from "../../../context/ProductContextProvaider";
-import EditProduct from "../EditProduct/EditProduct";
 import { useNavigate } from "react-router";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
+import { IconButton } from "@mui/material";
+import { useCart } from "../../../context/CartContextProvider";
+import { Favorite } from "@mui/icons-material";
+import { useFavorite } from "../../../context/FavoriteContextProvider";
 
 export default function CardProduct({ item }) {
-  const { deleteProduct } = useProduct();
+  const { deleteProduct, getProducts } = useProduct();
+
   const navigate = useNavigate();
+  const { addProductToCart, checkProductInCart } = useCart();
+  const { addProductToFavorite, checkProductInFavorite } = useFavorite();
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -41,6 +48,12 @@ export default function CardProduct({ item }) {
           Edit
         </Button>
         <Button size="small">details</Button>
+        <IconButton onClick={() => addProductToCart(item)}>
+          <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
+        </IconButton>
+        <IconButton onClick={() => addProductToFavorite(item)}>
+          <Favorite color={checkProductInFavorite(item.id) ? "primary" : ""} />
+        </IconButton>
       </CardActions>
     </Card>
   );

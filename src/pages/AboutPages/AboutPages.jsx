@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../AboutPages/AboutPaged.css";
+import "../AboutPages/AboutAdap.css";
 
 const AboutPages = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const AboutPages = () => {
       <div className="AboutPages_div_center">
         <div className="AboutPages_div_center_left">
           <img
+            className="AboutPages_div_center_left_img"
             src="http://womazing.s-host.net/wp-content/uploads/2021/03/about-pictures1.jpg"
             alt=""
           />
@@ -54,6 +56,7 @@ const AboutPages = () => {
         </div>
         <div className="AboutPages_div_bottom_right">
           <img
+            className="AboutPages_div_bottom_right_img"
             src="http://womazing.s-host.net/wp-content/uploads/2021/03/about-pictures2.jpg"
             alt=""
           />
