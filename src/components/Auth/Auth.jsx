@@ -17,6 +17,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useAuth } from "../../context/AuthContextProvier";
 import { useNavigate } from "react-router-dom";
 
+
 const theme = createTheme();
 
 export default function Auth() {
