@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import './Navbar.css';
+import './NavbarAdaptive.css';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Favorite } from '@mui/icons-material';
 import CallIcon from '@mui/icons-material/Call';
@@ -53,7 +54,12 @@ export default function Navbar() {
             color: 'black',
           }}>
           <Box className="NavbarLeft" sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography component="a" href="/" marginBottom="-10px" marginRight="200px">
+            <Typography
+              component="a"
+              href="/"
+              marginBottom="-10px"
+              marginRight="200px"
+              className="LogoMAin">
               <img
                 src="http://womazing.s-host.net/wp-content/uploads/2021/02/logo.svg"
                 alt="image"
@@ -105,6 +111,7 @@ export default function Navbar() {
 
           <Box className="NavbarRight" sx={{ display: 'flex', alignItems: 'center' }}>
             <Box
+              className="Call"
               component="a"
               href="tel:+720(495)20823-54-12"
               sx={{
