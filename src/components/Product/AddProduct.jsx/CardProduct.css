@@ -1,0 +1,8 @@
+.card__element {
+  margin-top: 5%;
+  text-align: center;
+}
+.card__button {
+  display: flex;
+  justify-content: space-evenly;
+}

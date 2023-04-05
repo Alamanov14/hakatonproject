@@ -17,17 +17,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useAuth } from "../../context/AuthContextProvier";
 import { useNavigate } from "react-router-dom";
 
-// createUserWithEmailAndPassword(auth, "asdasd@gam.com", "123qsdasd")
-//   .then((userCredential) => {
-//     // Signed in
-//     const user = userCredential.user;
-//     // ...
-//   })
-//   .catch((error) => {
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-//     // ..
-//   });
 
 const theme = createTheme();
 
