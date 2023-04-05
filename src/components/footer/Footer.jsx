@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../footer/Footer.css";
+import "../footer/FooterAdap.css";
 const Footer = () => {
   // const location = useLocation();
   const navigate = useNavigate();
@@ -27,34 +28,38 @@ const Footer = () => {
           </div>
         </div>
         <div className="center">
-          <div>
+          <div className="center_div">
             <p className="center_p" onClick={() => navigate(`/`)}>
               Главная
             </p>
           </div>
-          <div>
-            <p className="center_p" onClick={() => navigate(`/shop`)}>
-              Магазин
-            </p>
-            <h6 onClick={() => navigate(`/coat`)} className="center_h6">
-              Пальто
-            </h6>
-            <h6 onClick={() => navigate(`/sweatshirt`)} className="center_h6">
-              Свитшоты
-            </h6>
-            <h6 onClick={() => navigate(`/cardigan`)} className="center_h6">
-              Кардиганы
-            </h6>
-            <h6 onClick={() => navigate(`/hoodies`)} className="center_h6">
-              Толстовки
-            </h6>
+          <div className="center_div1">
+            <div className="center_div_p">
+              <p className="center_p" onClick={() => navigate(`/shop`)}>
+                Магазин
+              </p>
+            </div>
+            <div className="center_div_h6">
+              <h6 onClick={() => navigate(`/coat`)} className="center_h6">
+                Пальто
+              </h6>
+              <h6 onClick={() => navigate(`/sweatshirt`)} className="center_h6">
+                Свитшоты
+              </h6>
+              <h6 onClick={() => navigate(`/cardigan`)} className="center_h6">
+                Кардиганы
+              </h6>
+              <h6 onClick={() => navigate(`/hoodies`)} className="center_h6">
+                Толстовки
+              </h6>
+            </div>
           </div>
-          <div>
+          <div className="center_div">
             <p className="center_p" onClick={() => navigate(`/about`)}>
               О бренде
             </p>
           </div>
-          <div>
+          <div className="center_div">
             <p className="center_p" onClick={() => navigate(`/contact`)}>
               Контакты
             </p>

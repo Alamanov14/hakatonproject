@@ -1,0 +1,44 @@
+.order {
+  width: 85%;
+  margin: auto;
+}
+.order_div_top_h1 {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 110%;
+  /* identical to box height, or 61px */
+
+  letter-spacing: 0.02em;
+
+  color: #000000;
+}
+
+.order_div_top_div_p {
+  display: flex;
+}
+
+.order_div_top_p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+
+  color: #000000;
+}
+.order_div_top_p:hover {
+}
+.order_div_top_pp {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  margin-left: 15px;
+
+  color: #919191;
+}
