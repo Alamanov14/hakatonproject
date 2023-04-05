@@ -12,7 +12,7 @@ import { IconButton } from "@mui/material";
 import { useCart } from "../../../context/CartContextProvider";
 import { Favorite } from "@mui/icons-material";
 import { useFavorite } from "../../../context/FavoriteContextProvider";
-
+import "../AddProduct.jsx/CardProduct.css";
 export default function CardProduct({ item }) {
   const { deleteProduct, getProducts } = useProduct();
 
@@ -20,41 +20,47 @@ export default function CardProduct({ item }) {
   const { addProductToCart, checkProductInCart } = useCart();
   const { addProductToFavorite, checkProductInFavorite } = useFavorite();
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image={item.picture}
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {item.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.description}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.price}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.type}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small" onClick={() => deleteProduct(item.id)}>
-          delete
-        </Button>
-        <Button size="small" onClick={() => navigate(`/editPage/${item.id}`)}>
-          Edit
-        </Button>
-        <Button size="small">details</Button>
-        <IconButton onClick={() => addProductToCart(item)}>
-          <LocalMallIcon color={checkProductInCart(item.id) ? "primary" : ""} />
-        </IconButton>
-        <IconButton onClick={() => addProductToFavorite(item)}>
-          <Favorite color={checkProductInFavorite(item.id) ? "primary" : ""} />
-        </IconButton>
-      </CardActions>
-    </Card>
+    <div className="card__element">
+      <Card sx={{ maxWidth: 300 }}>
+        <CardMedia
+          sx={{ height: 598 }}
+          image={item.picture}
+          title="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {item.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.description}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.price}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {item.type}
+          </Typography>
+        </CardContent>
+        <CardActions className="card__button">
+          <Button size="small" onClick={() => deleteProduct(item.id)}>
+            delete
+          </Button>
+          <Button size="small" onClick={() => navigate(`/editPage/${item.id}`)}>
+            Edit
+          </Button>
+          {/* <Button size="small">details</Button> */}
+          <IconButton onClick={() => addProductToCart(item)}>
+            <LocalMallIcon
+              color={checkProductInCart(item.id) ? "primary" : ""}
+            />
+          </IconButton>
+          <IconButton onClick={() => addProductToFavorite(item)}>
+            <Favorite
+              color={checkProductInFavorite(item.id) ? "primary" : ""}
+            />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </div>
   );
 }
