@@ -1,7 +1,7 @@
 @media all and (max-width: 1440px) {
   .Block1{
     display: flex;
-    margin: -15% 0% 10% 9%;
+    margin: 3% 0% 10% 9%;
     /* margin-top: none; */
   }
   .HomeBlock1{
@@ -22,11 +22,18 @@
     *{
       font-size: 20px;
     }
-    
+
     .mainVideo{
 
-      width: 600px;
-      margin: 15% 10% 0 20%;
+      width: 800px;
+      margin: 10% 10% 0 20%;
+    }
+    .Collection{
+      /* display: flex; */
+      /* justify-content: space-between; */
+      /* margin: 10%, 10%, 5%, 10%; */
+      /* padding-top: 3%; */
+      
     }
   }
 
