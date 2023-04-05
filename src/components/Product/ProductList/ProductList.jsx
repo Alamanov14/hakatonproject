@@ -2,10 +2,10 @@ import { Box } from "@mui/material";
 import React, { useEffect } from "react";
 import { useProduct } from "../../../context/ProductContextProvaider";
 import CardProduct from "../AddProduct.jsx/CardRoduct";
-// import * as React from "react";
 import Typography from "@mui/material/Typography";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import Filter from "../../Filter/Filter";
 
 const ProductList = () => {
   const { getProducts, products } = useProduct();
@@ -14,14 +14,12 @@ const ProductList = () => {
     getProducts();
   }, []);
 
-  console.log(products);
-
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
     setPage(value);
   };
 
-  const itemsPerPage = 2;
+  const itemsPerPage = 5;
   const count = Math.ceil(products.length / itemsPerPage);
 
   const currentData = () => {
@@ -30,18 +28,21 @@ const ProductList = () => {
     return products.slice(begin, end);
   };
 
+  console.log(products);
+
   return (
     <div>
-      {" "}
+      <Filter currentData={currentData} />
+      {/* products={products} */}
+      {/* <CardProduct /> */}
       <Box id="list_card">
-        {currentData().map((item) => (
+        {/* {currentData().map((item) => (
           <CardProduct item={item} key={item.id} />
-        ))}
+        ))} */}
       </Box>
-      {/* <Pagination /> */}
       <Stack spacing={2}>
         <Typography>Page: {page}</Typography>
-        <Pagination count={10} page={page} onChange={handleChange} />
+        <Pagination count={count} page={page} onChange={handleChange} />
       </Stack>
     </div>
   );

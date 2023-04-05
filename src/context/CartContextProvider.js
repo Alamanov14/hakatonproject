@@ -87,7 +87,6 @@ const CartContextProvider = ({ children }) => {
       payload: cart,
     });
   };
-
   // Проверяем, есть ли товар в корзине по его id
   function checkProductInCart(id) {
     let cart = JSON.parse(localStorage.getItem("cart"));

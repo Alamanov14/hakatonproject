@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,28 +7,23 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import './Navbar.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Favorite } from '@mui/icons-material';
 import CallIcon from '@mui/icons-material/Call';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { display, style } from '@mui/system';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useProduct } from '../../context/ProductContextProvaider';
 import { Badge } from '@mui/material';
 import { useCart } from '../../context/CartContextProvider';
 import { getCountProductsInCart } from '../../helpers/functions';
+import Search from '../Search/Search';
 import { useAuth } from '../../context/AuthContextProvier';
-
-// const check_auth = () => {
-//   const user = false
-//   return user ? (
-//    <Switch></Switch>
-//   ) : (
-//     <Switch></Switch>
-//   )
-// }
 
 export default function Navbar() {
   const navigate = useNavigate();
+
+  const { modalActive, setModalActive, getProducts } = useProduct();
   const [count, setCount] = React.useState(0);
   const { addProductToCart } = useCart();
 
@@ -41,6 +36,12 @@ export default function Navbar() {
     setCount(getCountProductsInCart());
   }, [addProductToCart]);
 
+  function shopViewer() {
+    navigate('/shop');
+    setModalActive(true);
+    console.log(modalActive);
+    getProducts();
+  }
   return (
     <Box sx={{ flexGrow: 2 }}>
       <AppBar className="NavbarMain" position="static" id="app_bar">
@@ -73,7 +74,7 @@ export default function Navbar() {
                 className="NavbarButton"
                 variant="h6"
                 component="a"
-                onClick={() => navigate('/shop')}
+                onClick={() => shopViewer()}
                 sx={{
                   textTransform: 'none',
                 }}>
@@ -114,7 +115,7 @@ export default function Navbar() {
               <CallIcon />
               <p> +7 (495) 823-54-12</p>
             </Box>
-            <input placeholder="Search"></input>
+
             <Badge badgeContent={count} color="primary">
               <LocalMallIcon onClick={() => navigate('/cart')} />
             </Badge>
@@ -129,6 +130,8 @@ export default function Navbar() {
                 <Typography id="pages_link">Login</Typography>
               </Button>
             )}
+            {window.location.pathname === '/shop' ? <Search setActive={setModalActive} /> : null}
+            {console.log(modalActive)}
           </Box>
         </Toolbar>
       </AppBar>

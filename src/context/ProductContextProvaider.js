@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 import { API } from "../helpers/consts";
 
 export const productContext = createContext();
@@ -28,33 +28,37 @@ const ProductContextProvaider = ({ children }) => {
 
   console.log(state);
 
-  // todo  read(get request)
+  //*  read(get request)
   const getProducts = async () => {
     const { data } = await axios.get(`${API}${window.location.search}`);
     dispatch({ type: "GET_PRODUCTS", payload: data });
   };
-  // todo create (post request)
+  //* create (post request)
 
   const addProduct = async (newProduct) => {
     await axios.post(API, newProduct);
     getProducts();
   };
-  // todo Delete
+  //* Delete
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
     getProducts();
   };
-  //todo get product details
+  //* get product details
   const getProductDetails = async (id) => {
     const { data } = await axios.get(`${API}/${id}`);
     dispatch({ type: "GET_PRODUCT_DETAILS", payload: data });
   };
 
-  // todo save edit
+  //* save edit
   const saveEditedProduct = async (editedProduct) => {
     await axios.patch(`${API}/${editedProduct.id}`, editedProduct);
     getProducts();
   };
+  // * live search
+  const [modalActive, setModalActive] = useState(false);
+
+  //*fillter
 
   const values = {
     products: state.products,
@@ -64,8 +68,9 @@ const ProductContextProvaider = ({ children }) => {
     saveEditedProduct,
     getProductDetails,
     productDetails: state.productDetails,
+    modalActive,
+    setModalActive,
   };
-  console.log(values.products);
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
   );
