@@ -1,0 +1,31 @@
+@media all and (max-width: 1440px) {
+  .Block1{
+    display: flex;
+    margin: -15% 0% 10% 9%;
+    /* margin-top: none; */
+  }
+  .HomeBlock1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: -15% 5% 0 5%; */
+    /* padding: 0 0%; */
+    /* text-align: left; */
+  }
+  .mainVideo{
+
+    width: 900px;
+    margin: 0 10% 0 20%;
+  }
+  }
+  @media all and (max-width: 768px){
+    *{
+      font-size: 20px;
+    }
+    .mainVideo{
+
+      width: 600px;
+      margin: 15% 10% 0 20%;
+    }
+  }
+

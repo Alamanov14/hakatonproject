@@ -1,11 +1,11 @@
-import { Box } from "@mui/material";
-import React, { useEffect } from "react";
-import { useProduct } from "../../../context/ProductContextProvaider";
-import Typography from "@mui/material/Typography";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
-import Filter from "../../Filter/Filter";
-import "../ProductList/ProductList.css";
+import { Box } from '@mui/material';
+import React, { useEffect } from 'react';
+import { useProduct } from '../../../context/ProductContextProvaider';
+import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import Filter from '../../Filter/Filter';
+import '../ProductList/ProductList.css';
 const ProductList = () => {
   const { getProducts, products } = useProduct();
 

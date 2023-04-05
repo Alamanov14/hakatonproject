@@ -15,8 +15,8 @@
   flex-direction: column;
   align-items: center;
   margin: 5% 5% 0 5%;
-  padding: 0 0%;
-  text-align: left;
+  /* padding: 0 0%; */
+  /* text-align: left; */
 }
 .mainVideo{
 
@@ -33,3 +33,72 @@
 .NewCollectionBlock{
   display: block;
 }
+
+.images{
+  height: 200px;
+  width: 700px;
+}
+.NewCollectionBlock{
+  display: flex;
+  flex-direction: column;
+  align-items:normal;
+  margin: 0 9% 0 9%;
+}
+.Collection{
+  display: flex;
+  justify-content: space-between;
+  margin: 10%, 10%, 5%, 10%;
+  padding-top: 3%;
+  
+}
+.ButtonOpenShop2{
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  padding-top: 5%;
+}
+
+.WhatImportant{
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: 5% 9% 0 9%;
+  font-size: 23px;
+}
+.abutUS{
+  display: flex;
+  flex-direction: row;
+  margin: 3% 0 0 0;
+  width: 90%;
+  gap: 40px;
+  /* align-items:normal; */
+}
+
+.WishTeamMain{
+  margin: 10% 9% 0 9%;
+}
+
+.WishTeam{
+   display: flex;
+  /* flex-direction: row; */
+  /* align-items: center; */
+ 
+  font-size: 23px;
+}
+.WishBlock{
+  display: flex;
+  flex-direction: column;
+  margin: 10%, 10%, 5%, 10%;
+  padding-top: 3%;
+
+}
+.WishBottom{
+
+}
+.Wishimage{
+  width: 800px;
+  margin: 5% 10% 0 0%;
+}
+  
+
