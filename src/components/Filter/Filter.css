@@ -2,8 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 5%;
-  max-width: 82%;
-  margin-left: 8%;
+  max-width: 89%;
+  margin-left: 7%;
   justify-content: space-evenly;
 }
 
@@ -20,4 +20,19 @@
   margin-left: 5%;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+@media all and(max-width:1024px) {
+  .product__card {
+    margin: 0% 0%;
+    justify-content: space;
+    max-width: 90%;
+    margin-left: 5%;
+  }
+  .card__element {
+    margin-top: 5%;
+    text-align: center;
+    width: 48%;
+    height: min-content;
+  }
 }

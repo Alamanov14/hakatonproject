@@ -21,12 +21,8 @@ export default function CardProduct({ item }) {
   const { addProductToFavorite, checkProductInFavorite } = useFavorite();
   return (
     <div className="card__element">
-      <Card sx={{ maxWidth: 300 }}>
-        <CardMedia
-          sx={{ height: 598 }}
-          image={item.picture}
-          title="green iguana"
-        />
+      <Card sx={{ maxWidth: 400 }}>
+        <CardMedia sx={{ height: 598 }} image={item.picture} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {item.name}

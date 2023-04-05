@@ -5,9 +5,26 @@
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.672);
 }
-
+.nav {
+  display: block;
+}
+.nav_logo {
+  display: none;
+}
 .NavbarLeft {
-  color: #6e9c9f;
   transition: 0.4s;
   opacity: 0.7;
+}
+.NavbarRight {
+  margin-right: -63px !important;
+}
+.toolbar__end {
+  /* background-color: green; */
+  display: flex;
+  justify-content: space-evenly !important;
+  margin: 0 !important;
+  width: 95% !important;
+}
+.header__bureger {
+  display: none;
 }
