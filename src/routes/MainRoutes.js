@@ -18,6 +18,7 @@ import EditProductPage from "../pages/EditProductPage/EditProductPage";
 import Cart from "../components/cart/Cart";
 import Login from "../components/Login/Login";
 import Order from "../components/Order/Order";
+import OrderIsProcessed from "../components/OrderIsProcessed/OrderIsProcessed";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -39,6 +40,7 @@ const MainRoutes = () => {
     { link: "/cart", element: <Cart />, id: 16 },
     { link: "/login", element: <Login />, id: 17 },
     { link: "/order", element: <Order />, id: 18 },
+    { link: "/Processed", element: <OrderIsProcessed />, id: 19 },
   ];
   //   const PRIVATE_ROTES = [{ link: "/admin", element: <AdminPage />, id: 5 }];
   return (
