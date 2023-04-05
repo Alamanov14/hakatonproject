@@ -1,24 +1,20 @@
-// import * as React from "react";
 import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Favorite } from "@mui/icons-material";
 import CallIcon from "@mui/icons-material/Call";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import { display, style } from "@mui/system";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useProduct } from "../../context/ProductContextProvaider";
 import { Badge } from "@mui/material";
 import { useCart } from "../../context/CartContextProvider";
 import { getCountProductsInCart } from "../../helpers/functions";
 import Search from "../Search/Search";
+import { useAuth } from "../../context/AuthContextProvier";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -26,6 +22,11 @@ export default function Navbar() {
   const { modalActive, setModalActive, getProducts } = useProduct();
   const [count, setCount] = React.useState(0);
   const { addProductToCart } = useCart();
+
+  const {
+    handleLogout,
+    user: { email },
+  } = useAuth();
 
   React.useEffect(() => {
     setCount(getCountProductsInCart());
@@ -135,14 +136,23 @@ export default function Navbar() {
               <LocalMallIcon onClick={() => navigate("/cart")} />
             </Badge>
 
+            <Favorite onClick={() => navigate("/favorite")} />
+            {email ? (
+              <Button onClick={handleLogout} sx={{ my: 2, display: "block" }}>
+                <Typography id="pages_link">Logout</Typography>
+              </Button>
+            ) : (
+              <Button
+                onClick={() => navigate("/login")}
+                sx={{ my: 2, display: "block" }}
+              >
+                <Typography id="pages_link">Login</Typography>
+              </Button>
+            )}
             {window.location.pathname === "/shop" ? (
               <Search setActive={setModalActive} />
             ) : null}
             {console.log(modalActive)}
-            <Favorite onClick={() => navigate("/favorite")} />
-            <Button sx={{ textTransform: "none", color: "black" }}>
-              Login
-            </Button>
           </Box>
         </Toolbar>
       </AppBar>
