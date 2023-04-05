@@ -21,7 +21,7 @@ export default function CardProduct({ item }) {
   const { addProductToFavorite, checkProductInFavorite } = useFavorite();
   return (
     <div className="card__element">
-      <Card sx={{ maxWidth: 300 }}>
+      <Card sx={{ maxWidth: 400 }}>
         <CardMedia
           sx={{ height: 598 }}
           image={item.picture}

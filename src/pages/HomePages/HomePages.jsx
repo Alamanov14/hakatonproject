@@ -1,7 +1,7 @@
-import { Button } from '@mui/material';
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../HomePages/HomePages.css';
+import { Button } from "@mui/material";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "../HomePages/HomePages.css";
 
 const HomePages = () => {
   const navigate = useNavigate();
@@ -10,8 +10,8 @@ const HomePages = () => {
       <div className="Block1">
         <h1>Новые поступления в этом сезоне </h1>
         <h3>
-          Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время
-          исследовать.
+          Утонченные сочетания и бархатные оттенки - вот то, что вы искали в
+          этом сезоне. Время исследовать.
         </h3>
         <button onClick={() => navigate(`/shop`)}>Открыть магазин</button>
 
@@ -21,7 +21,8 @@ const HomePages = () => {
           src="C:\Users\Sherm\Desktop\hakatonproject\Content "
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   );
