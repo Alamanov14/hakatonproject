@@ -10,6 +10,7 @@ import { useCart } from "../../context/CartContextProvider"; // импортир
 import { Button } from "@mui/material"; // импортируем компонент Button из библиотеки Material-UI
 import CloseIcon from "@mui/icons-material/Close";
 import { maxWidth } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 
 // функция, которая возвращает объект с полями name, calories, fat, carbs, protein
 function createData(name, calories, fat, carbs, protein) {
@@ -28,6 +29,8 @@ const rows = [
 // экспортируем компонент Cart, который использует хук useCart
 export default function Cart() {
   const { getCart, cart, changeProductCount, deleteCartProduct } = useCart();
+
+  const navigate = useNavigate();
 
   // вызываем функцию getCart при первом рендеринге компонента
   React.useEffect(() => {
@@ -87,7 +90,9 @@ export default function Cart() {
         </TableBody>
       </Table>
 
-      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
+      <Button onClick={() => navigate("/order")}>
+        BUY NOW FOR {cart?.totalPrice} $
+      </Button>
     </TableContainer>
   );
 }

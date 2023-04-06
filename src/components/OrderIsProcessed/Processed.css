@@ -1,0 +1,33 @@
+.Processed {
+  width: 80%;
+  margin: auto;
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Processeddd {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  width: 300px;
+  height: 70px;
+  background-color: #ffffff;
+  color: #5d8487;
+  border: none;
+  font-size: 19px;
+  font-weight: 300;
+  border: 0.5px solid #5d8487;
+  margin: auto;
+}
+
+.button:hover {
+  background-color: #5d8487;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.Processed_img {
+  margin-right: 40px;
+}

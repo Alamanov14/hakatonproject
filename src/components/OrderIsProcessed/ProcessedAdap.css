@@ -1,0 +1,38 @@
+@media all and (max-width: 930px) {
+  .button {
+    width: 230px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .Processed {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Processeddd,
+  .Processedd {
+    width: 80%;
+  }
+  .Processedd {
+    margin-top: 30px;
+    margin-left: 20%;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .Processeddd {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 377px) {
+  .ppp {
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .Processedd {
+    margin-left: 0%;
+  }
+}
